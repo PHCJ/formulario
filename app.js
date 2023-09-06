@@ -36,7 +36,7 @@ app.get("/editar/:id", function (req, res) {
 
 app.get("/excluir/:id", function (req, res) {
     post.destroy({ where: { 'id': req.params.id } }).then(function () {
-        res.render("primeira_pagina")
+        res.redirect("/consulta")
     }).catch(function (erro) {
         console.log("Erro ao excluir ou encontrar os dados do banco: " + erro)
     })
